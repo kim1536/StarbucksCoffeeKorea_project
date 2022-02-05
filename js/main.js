@@ -36,3 +36,15 @@ window.addEventListener('scroll', _.throttle(function () {
     }
 }, 300));
 // _.throttle(함수, 시간)
+
+// メイン画面アニメーション 画像が0.7秒毎に1つずつ現れる
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach((fadeEl, index) => {
+    // gsap.to(요소, 지속시간, 옵션)
+    gsap.to(fadeEl, 1, {
+        delay: (index + 1) * .7,
+        opacity: 1
+    });
+});
+
+
