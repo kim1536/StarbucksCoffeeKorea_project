@@ -37,14 +37,23 @@ window.addEventListener('scroll', _.throttle(function () {
 }, 300));
 // _.throttle(함수, 시간)
 
-// メイン画面アニメーション 画像が0.7秒毎に1つずつ現れる
-const fadeEls = document.querySelectorAll('.visual .fade-in');
-fadeEls.forEach((fadeEl, index) => {
-    // gsap.to(요소, 지속시간, 옵션)
-    gsap.to(fadeEl, 1, {
-        delay: (index + 1) * .7,
-        opacity: 1
-    });
-});
+/**
+ * 순서대로 나타나는 기능
+ */
+// 나타날 요소들(.fade-in) 찾기.
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+// 나타날 요소들을 하나씩 반복해서 처리!
+fadeEls.forEach(function (fadeEl, index) {
+  // 각 요소들을 순서대로(delay) 보여지게 함!
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  })
+})
 
-
+// new Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+    direction: 'vertical', // 수직 슬라이드
+    autoplay: true, // 자동 재생 여부
+    loop: true // 반복 재생 여부
+  });
