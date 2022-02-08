@@ -682,3 +682,34 @@ header .badges .badge {
     right: 0;
     margin: auto;
 }
+
+/* FIND STORE */
+.find-store {
+    background-image: url("../images/find_store_bg.jpg");
+}
+.find-store .inner {
+    height: 400px;
+}
+.find-store .texture1 {
+    position: absolute;
+    top: 0;
+    left: 400px
+}
+.find-store .texture2 {
+
+}
+.find-store .picture1 {
+
+}
+.find-store .picture2 {
+
+}
+.find-store .text-group {
+    
+}
+.find-store .text-group .title{
+
+}
+.find-store .text-group .description{
+
+}
